@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "WavZero",
+      "hasCanvas": true,
+      "bodyTextLen": 770,
+      "bodyTextHash": "e2ad71c97a33c3bf2f3c838f40a5e80cdf14590dd51034a109224ef4b6d63c87",
+      "bodyTextPrefix": "AUDIO FIELD KIT WavZero arrows · enter · esc Tap mic Boot kit SU",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "WavZero",
+      "hasCanvas": true,
+      "bodyTextLen": 654,
+      "bodyTextHash": "4bcec7b37c794c6980a382e89f680ddb3c24680e6adb9328f4cc4df18a0f2954",
+      "bodyTextPrefix": "AUDIO FIELD KIT WavZero Tap mic Boot kit SUB-GHZ / AUDIO 433.92 ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}

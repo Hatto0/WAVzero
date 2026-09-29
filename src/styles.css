@@ -1,0 +1,113 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --font-sans: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", "SF Mono", ui-monospace, monospace;
+
+  --color-bg: #0c0d0b;
+  --color-surface: #141511;
+  --color-elevated: #1c1d18;
+  --color-fg: #f2eee4;
+  --color-muted: #8a8d82;
+  --color-faint: #5c5f56;
+  --color-primary: #c8d2b8;
+  --color-primary-fg: #141511;
+  --color-signal: #e07020;
+  --color-signal-fg: #1a0d04;
+  --color-border: #2a2c26;
+  --color-lcd: #0e1410;
+  --color-lcd-pixel: #c8d2b8;
+  --color-lcd-dim: #4a5a48;
+  --color-ok: #7d9a6c;
+  --color-warn: #c4a15a;
+  --color-rx: #7ea0b0;
+  --color-tx: #e07020;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 28px;
+  --radius-device: 36px;
+
+  --shadow-device: 0 24px 60px rgb(0 0 0 / 0.45), 0 2px 0 rgb(255 255 255 / 0.04) inset;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    min-height: 100dvh;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+.scanlines {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgb(0 0 0 / 0.18) 0px,
+    rgb(0 0 0 / 0.18) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+}
+
+.lcd-glow {
+  box-shadow:
+    0 0 0 1px rgb(200 210 184 / 0.12),
+    0 0 28px rgb(200 210 184 / 0.08),
+    inset 0 0 18px rgb(0 0 0 / 0.55);
+}
+
+.device-body {
+  background:
+    linear-gradient(180deg, #2a2b28 0%, #161714 18%, #121310 72%, #0d0e0c 100%);
+  box-shadow: var(--shadow-device);
+}
+
+.antenna-bay {
+  background: linear-gradient(180deg, #f08a3c 0%, #e07020 42%, #b85212 100%);
+}
+
+.log-tx { color: var(--color-tx); }
+.log-rx { color: var(--color-rx); }
+.log-ok { color: var(--color-ok); }
+.log-warn { color: var(--color-warn); }
+.log-debug { color: var(--color-faint); }
+.log-info { color: var(--color-primary); }
+
+@keyframes led-pulse {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 1; }
+}
+
+.led-live {
+  animation: led-pulse 1.1s var(--ease-in-out, ease-in-out) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .led-live {
+    animation: none;
+    opacity: 1;
+  }
+}
